@@ -16,3 +16,5 @@
 
 **Note:** In the code there are scripts which exports certain dataframes in a CSV file. Please update the path accordingly. 
 
+## Review articles document
+Url: https://docs.google.com/spreadsheets/d/1zoQf0eF9ykTymUZkser3ZFkQtXwrbqbnsvV8MmCyYq0/edit?usp=sharing
