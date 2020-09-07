@@ -17,4 +17,4 @@
 **Note:** In the code there are scripts which exports certain dataframes in a CSV file. Please update the path accordingly. 
 
 ## Review articles document
-Url: https://docs.google.com/spreadsheets/d/1zoQf0eF9ykTymUZkser3ZFkQtXwrbqbnsvV8MmCyYq0/edit?usp=sharing
+Url: https://github.com/nilanjan04/graft_failure_prediction_TBASE/blob/master/Short-Term%20prediction/Review%20articles%20for%20Short-term%20prediction%20of%20CKD.xlsx
