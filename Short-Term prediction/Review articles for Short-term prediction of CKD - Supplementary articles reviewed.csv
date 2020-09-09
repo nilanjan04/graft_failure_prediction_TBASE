@@ -1,0 +1,143 @@
+Title of the paper,Journal,Abstract,Provider,Take away Notes,Further readings
+"Mapping Patient Trajectories using Longitudinal Extraction and deep learning in the MIMIC 3 Critical care database - Brett K., Patryk Orzechowski, Jason H. Moore",World Scientific Publishing Company,Deep learning to predict mortality of patient 6 months and 1 year after admission,Anne,"- Deep Learning techniques - unsupervides auto encoders, long short-term memory networks
+- Use of auto encoders to represent patient care events in a low dimensional vector space
+- MIMIC database divided in 4 groups 
+- Stratified cross validation (used to divide training and test data set
+- Survival prediction on multilayer perceptron deep neural network, logistic regression and SVM
+- Unsupervised autoencoders - inner most hidden layer using t-Stochastic Neighbour Embedding
+- unsupervised prediction - random forest most effective","- Autoencoders
+- Stratified cross validation
+- multilayer perceptron deep neural network
+- logistic regression
+- SVM
+- t-Stochastic Neighbour Embedding
+- random forest"
+"Data Descriptor: eICU Collaborative research database - Tom J. Pollard, Alistair E. W. Johnson...",Nature,Database description of eICU programs across USA,Marcel,"- Only ICU related data over 200000 admissions
+- a good source if only ICU data is considered along with MIMIC 3",
+"A Multidimensional Prognostic Score and Nomogram to Predict Kidney Transplant Survival : The Integrated Box (iBox) system - A. loupy, O. Aubert, B. Orandi.... ",-,Scoring system that predicts kidney allograph loss,Marcel,"- 4344 kidney transplant receipients (2002 - 2014)
+- prognostic abilty of 80 parameters was evauated using Cox regression analyses",- Cox regression 
+"Machine learning for the prediction of volume responsiveness in patients with oliguric acute kidney injury in critical care - Zhongheng Zhang, Kwok M. Ho, Yucai Hong",BMC,Differentiating between Volume Responsive and Unresoponsive ,Anne,"- Extreme Gradient boosting (XGBoost) and logistic regression were used, where XGBoost outperformed ","- AUC ROC (https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
+- CI (https://www.informationweek.com/big-data/the-basics-of-ci-cd-for-data-science-and-machine-learning/a/d-id/1334736)
+- "
+"A clinical applicable approach to continuous prediction of future accute kidney injury - Nenad Tomasev, Xavier Glorot, ...",Nature,Deep learning approach to continuous prediction of accute kidney injury within a timeline of next 48 hours,Anne,- use of Tensor Flow (Sonnet library),Tensor Flow
+"Machine learning in predicting graft failure following kidney transplantation: A systematic review of published predictive models - Sameera Senanayake, Nicole White, Nicholas Graves ....",ELSEVIER,Detailed survey of published ML and ANN predictive models for graft failure after kidney transplant,Anne,"- most common ML methods for predictiing graft failures: Decision tree, ANN, Bayesian belief networks
+- (35) used decision tree and random forest to predict acute anti body mediated rejectionat 30 days post transplant
+- (26) used decision tree, random forest, Linear and Radial support vector machines and ANN to predict delayed graft function within one week after transplant
+- common parameter used: area under the curve (AUC), sensitivity, specificity and accuracy
+- (35) random forest (AUC - 0.854) outperformed decision tree (AUC - 0.819) for 30 days prediction
+- (33) ANN (AUC - 0.865) outperformed SVM (AUC - 0.769) for 5 years prediction
+- ANN has higher accuracy than logistic regression
+- Principal Component Analysis (PCA) is used for dimensionality reduction (47)",
+"Predictive modelling for Organ Trabsplantation Outcomes - Dr. Vinaya Rao, Dr. Ravi S. Behara, Dr, Ankur Agarwal",IEEE,Use of multilayer perceptron and Bayes network to predict transplant outcomes undergoing kidney-liver (dual organ) transplantation,Anne,"- use of multilayer perceptron (MLP) and Bayesian Network (BN)
+- 358 patients (dual organ transplantation - kidney & liver) were used
+- outcome classes (died, re-transplantation required, lost, alive)
+- 11 clinincal attributes (11 layers, 1 hidden layer)
+- outcome of BN (accuracy: 63.93%) is better than MLP (accuracy: 55.56%) in all aspects","- Bayesian Networks
+- Multilayer Perceptron (feed forward ANN)"
+"A Machine Learnign Approach Using Survival Statistics to Predict Graft Survival in Kidney Transplant Recipients: A Multicenter Cohort Study - Kyung Don Yoo, Junhyug Noh, Hajeong Lee....",Nature,Comparison of ML models for long term graft survival (10 years) ,Anne,"- evaluation of predictive power of survival decision tree, bagging, random forest, ridge and lasso
+- comparison with conventional models like decision tree and cox regression
+- ANN success rate: 85% while Bayesian net classifiers prediction accuracy for long term is 97%
+-  ","- Bagging
+- Random forest"
+"Prediction system for risk of allograft loss in patients receiving kidney transplants: internaltional derrivation and validation study - Alexander Loupy, Olivier Aubert, ....",BMJ,Prediction of long term kidney allograft failure for world wide databases,Anne,"- 32 candidate prognostic factors for kidney allograft survival were assessed
+- contains some assesment criterias for kidney allograft function
+- Use of Kaplan Meier method to estimate graft survival
+- Totally based on statistical models
+- they have shown that the iBox risk prediction score outperformed current gold standard (eGFR and proteinuria) for monitoring kidney recipients.
+- strength of study (page 10)",
+"Graft Rejection Prediction Following Kidney Transplantation Using Machine Learning Techniques: A Systematic Review and Meta-Analysis - Nursetyo, Syed-Abdul, Li",International Medical Informatics Association (IMIA),"Survey of 14 studies regarding prediction of graft survival through ML techniques (searched from PUBMED, DBLP, Scopus)",Anne,"- 5 different ML algorithms (ANN, DT, SVM, BBN, ensemble learning method - Random Forest)
+- Decision tree (AUC: 79.5%) has slightly higher performance than ANN (AUC: 78.2%)
+- Eurotransplant (public database)
+- DT has therobustness to noise, low computational cost, and ability to dealwith redundant features; it has advantages over other learning algorithms
+- there is no ‘One size fits all’ approach for applying ML methods. Selection of the right algorithm, provided input variables and volume, and accuracy of the training datasets are critical.","- ensemble learning: Ensemble methods are meta-algorithms that combine several machine learning techniques into one predictive model in order to decrease variance (bagging), bias (boosting), or improve predictions (stacking)."
+"Generating comparitive analysis of early stageprediction of Chronic Kidney Diseases - Rubini, Eswaran",IJMER,Prediction of CKD (no details given),Nil,"- use of MLP, Radial Basis Functions Network (RBF) and logistic regression
+- concept of confusion matrix and other performance analysis factors are nicely discussed
+- result MLP > RBF > LR",- RBF
+"Predicting Renal Failure Progression in Chronic Kidney Disease Using Integrated Intelligent Fuzzy Expert System - Norouzi, Yadollahpour,...",Hindawi Publishing Corporation,Use of Adaptive Neurofuzzy Inference System (ANFIS) to predict speed og GFR decrease in CKD patients,Nil,"- GFR (Glomerular filtration rate) is the only reliable parameter of renal function and progression of CKD
+- when GFR < 15cc/kg/min/1.73m2, renal replacement therapy including dialysis or kidney transplant is necessary
+- used ANFIS network to predict the GFR values to train
+- patient parameters were provided: inputs of predictive model were shown (10)
+- Pearson correlation coefficients test were used to determine the most significant input variables for ANFIS model (4 selected out of 10)
+- Outcomes for 6, 12 and 18 months
+- For each input in ANFIS, 10 clusters were considered (based on trial and error)
+- For error criteria, Normalized Mean Square Error was selected (NMSE) among Mean Square Error (MSE) and Mean Absolute Error (MAE)
+- NMSE rate from 3.8% - 4.7%
+- Conclusion: ANFIS could predict the GFR for 6, 12, 18 months with >95% accuracy","- ANFIS (type of Neural Network)
+- Error criterias (MSE, MAE, NMSE)"
+"Cuckoo Search coupled with Artificial Neural Network in the detection of Chronic Kidney Disease - Chatterjee, Sen,....",IEEE,Detecting CKD at early stage using CS trained NN,Nil,"- Cuckoo Search (CS) Optimization tries to minimize the root mean squared error (RMSE) during the training process of MLP-FFN
+- Dataset: UCI Machine Learning Repository
+- Basic intro of ANN and CS with equations  ",- Cuckoo Search
+Recent Trends in Computational Prediction of Renal Transplantation Outcomes,IJCA,Survey of prediction of organ trnsplantation outcomes and survival analysis,Nil,"- For organ transplantation outcomes, two studies on data mining techniques and ANN were surveyed
+- For survival outcomes a couple of studies on medical literatures along with Bayes classifier and BBN were surveyed",
+"A predictive model for progression of Chronic Kidney Disease to Kindey failure - Tangri, Stevens, Griffith....",JAMA,Use of Cox proportional hazards regression methods to predict kidney failure and need for transplantation,Nil,"- kidney damage severity determined by level of GFR estimated from createnine level
+- patients' subgroups based on age, sex, CKD stage, diabetes status, urine albumin-to-createnine ratio, etc.
+- development cohort: patients with CKD stage 3-5 (eGFR <60/mL/min/1.73 m2)
+- list of candidate dependent variables provided including demographic, physical examniation and comorbidities
+- variables preparation methods were described a little bit 
+- risk prediction horrizon - 1,3,5 years till initiation of dialysis or transplant",
+"Climical decision support system for diagnosis and management of chronic renal failure - Al-Hyari, Al-Taee, Al-Taee",IEEE,"Diagnosis of Chronic Renal Failure (CFR) using ANN, Naive Bayes and Decision tree",Nil,"- Use of ANN, decision tree, naive bayes
+- use of WEKA (open source) for performance comparison and evaluation purpose
+- CFR has 5 stages depending on GFR with 5 requires dialysis or transplantation
+- GFR measures how much liquid and waste is passing from the blood through the glomureli filters in the kidneys to form urine each minute
+- GFR = ((140-Age)*Mass/(72*serum createnine)) * alpha, where alpha = gender correction factor, 1 for male and 0.85 for female
+- 102 instances of patients each with 15 attributes
+- DT has the most accuracy in various tests 
+- Receiver Operating Characteristics (ROC) Curve is used to measure the characteristics of the algorithms","- ROC curve
+- WEKA"
+Comparitive study of Chronic Kidney Disease Prediction using KNN and SVM - Sinha,IJERT,Compare the performance of SVM and KNN classifier for CKD prediction,Nil,"- KNN performed better than SVM
+- complete list of attributes are provided
+",
+"Prediction of delayed renal allograft function using an artificial neural network - Brier, Ray, Klein",Nephrol Dial Transplant,ANN (multilayer feed forward perceptron) is used to predict the occurence of DFG and compared with logistic regression,NIl,"- Logistic regression was more sensitive to predict no DFG (91 vs 70%)
+- Neural network was sensitive to predict yes DFG (56 vs 37%)
+- overall performance accuracy of both logistic regression and the neural network was 64 and 63 %
+- logistic regression was 36.5% sensitive and 90.7% specific
+- ANN was 63.5% sensitive and 64.8% specific
+- Delayed graft function is the time taken by the kidney to attain threshold Cockroft calculated createnine clearance of ≥10ml/min
+- ",
+Decision tree and random forest models for outcome prediction inantibody incompatible kidney transplantation - Shaikhina et al,Science Direct,Use of Decision tree and Random forest to predict early transplant rejection (post 30 days),Nil,"- The DT and RF models identified the key risk factors associated with acute rejection: the levels of the donor specific IgG anti-bodies, the levels of IgG4 subclass and the number of human leucocyte antigen mismatches betweenthe donor and recipient.",
+Use of Artificial Neural Networks in Improving Renal Transplantation Outcomes - Petrovsky et. al,Research gate,Use of ANN for prediction of kidney transplant rejections,Nil,"- Nice analysis of ANN applications in different clinical areas (ex: decision making, medical outcome prediction, transplantation setting)
+- Data from 771 successful and 771 unsuccessful transplants
+- Features used are discussed
+- Best performing ANN: 8 neurons in hidden layer and one neuron in output layer
+- Predicted 84.95% successful transplants and 71.7% unsuccessful transplant
+- 4 classes of rejection: hyperacute (HA), acute (A), subacute (SA), chronic (C)",- classes of kidney rejections
+"Prediction of graft survival of living-donor kidney transplantation: nomograms or artificial neural networks? AKL, A et. al",NCBI,ANN to predict 5 year graft survival of living donor kidney transplant,Nil,"- Comparison of the ANN outcome with COX regression based nomogram
+- Detailed exclusion criteria of patients
+- 1581 patients data
+- inputs and features were discussed
+- training carried out by conjugate gradient descent optimization algorithm (target: sum squared error of 0.01)
+- ",
+"SVM Classification: Optimization with the SMOTE Algorithm for the Class Imbalance Problem, Liliya Demidova",IEEE,selection of the optimal parameters values for the SMOTE: search optimisation algorithm for parameter selection for SMOTE,Anne,"- discussed SVM hyperplane and how it is influenced by the minorty sets in training
+- two types of sampling strategies: random & special
+- The advantages of random sampling are its simplicity, ease of implementation and visualization, and the ability to change the balance in any desired direction.
+- over sampling works better than undersampling since no information is getting lost
+- The SMOTE algorithm [6] creates the artificial objects of the minority class based on the similarities in the feature space between the existing objects using the k -nearest neighbor algorithm (kNN algorithm) [12].
+-  it is necessary to consider different combinations of the parameters values of the SMOTE algorithm with different ways of random generation of new objects.",- SMOTE
+"Imbalanced-learn: A Python Toolbox to Tackle the Curse of Imbalanced Datasets in Machine Learning, Guillaume Lemaˆıtre et. al",JMLR,Implementation of Imbalanced Learn python toolbox to deal with imbalanced datasets,Anne,"- Sampling techniques: (i) under-sampling, (ii) over-sampling, (iii) combination of overand under-sampling, and (iv) ensemble learning methods
+- Good competitor of SMOTE
+- Detailed chart of comparison given for different undersampling and oversampling techniques",
+Sampling Approaches for Imbalanced Data Classification Problem in Machine Learning - ,Springer,performance comparison of popular sampling methods,Anne,"- Undersampling techniques: 
+1. CNN—Condensed Nearest Neighbour
+2. TL—Tomek Links
+3. OSS—One-Sided Selection
+4. ENN—Edited Nearest Neighbour
+5. NCL—Neighbourhood Cleaning Rule
+- Oversampling techniques
+1. SMOTE: Matching rows according to K-NN are randomly chosen, and their convex combinations are prepared to obtain new samples
+2. MWMOTE: It is a modification over SMOTE technique and works better when the quality of input data is low
+3. PDFOS—Probability Density Function Estimation-Based Oversampling
+4. RWO—Random Walk Oversampling
+5. ADASYN—Adaptive Synthetic Sampling",
+Learning from class-imbalanced data: Review of methods and applications: GuoHaixiang,Elsevier,Systematic review of of rare event de- tection from an imbalanced learning perspective,Anne,"- 517 papers reviewed
+- Resampling
+- Feature selection and extraction: Filters, wrappers and embedded methods
+- Feature extraction creates new features from the original features using functional mapping
+- Feature selection creates a sub set of the entire feature space
+- Techniques for feature extraction: Principal Component Analysis (PCA), Singular Value Decompo- sition (SVD), and f Non-negative Matrix Factorization (NMF)",
+"Accurateandfastfeatureselectionworkflowforhigh-dimensionalomicsdata: YassetPerez-Riverol, et.al",Plos one,"Cover relevant issues regarding feature selection process in medical data
+developeda FS workflow and an R package for high-dimensional omics data analysis",Anne,"- good background to write about feature selection
+- most common feature engineering approach is univariate filtering where each feature is ranked and eliminated (relationship between features and class label)
+- However,correlation filters could prompt some loss of relevant features that are meaningless by themselves but that can be useful in combination.
+- to overcome this problem Principal Component Analysis (PCA) and.Linear Discriminant Analysis
+- wrapper approaches (e.g.forward selection and backward elimination) canuse the prediction performance of a given ML approach to assess the relative usefulness of different subsets of variables
+- used SVM and RF as backward elimination wrapper",
