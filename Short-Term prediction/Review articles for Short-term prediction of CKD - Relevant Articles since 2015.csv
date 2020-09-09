@@ -1,0 +1,183 @@
+ML model: Decision trees,"Publication: URL, year, Author","Output: Mortality, length of stay..",Feature engineering: how? Which methods?,"Hyper parameter tuning: 
+
+Which methods, e.g. grid search, bayesian optimization",Number of inputs in the model,External Data/ Cross validation:,"Population: size, age, exclusion/inclusioncriteria","Validation results 
+Ac: Accuracy 
+Sn: Sensitivity 
+Sp: Specificity 
+Auc: Area under the curve
+PPV: Positively Predicted Value
+NPV: negatively predicted Value
+CorrCoef: Correlation coefficient
+MAE: Mean absolute error
+RMSE: Root mean squared error
+RSE: Relative absolute error
+RRSE: Root relative squared error
+",Ablation / explainability: Any explainability methods used?,Feature type,Time frame of prediction: how many days after/before Transplantation how many days predicted?,Data base used ,"Handling of missing values: e.g. imputations,","Data extractor: Nil, Anne.."
+,"Prediction system for risk of allograft loss in patients receiving kidney transplants: international derivation and validation study: 
+https://doi.org/10.1136/bmj.l4923; 
+2019; 
+Alexandre Loupy, Olivier Aubert, Babak J Orandi, Maarten Naesens, Yassine Bouatou, Marc Raynaud, Gillian Divard, Annette M Jackson, Denis Viglietti, Magali Giral, Nassim Kamar, Olivier Thaunat, Emmanuel Morelon, Michel Delahousse, Dirk Kuypers, Alexandre Hertig, Eric Rondeau, Elodie Bailly, Farsad Eskandary, Georg Böhmig, Gaurav Gupta, Denis Glotz, Christophe Legendre, Robert A Montgomery, Mark D Stegall, Jean-Philippe Empana, Xavier Jouven, Dorry L Segev, Carmen Lefaucheur",,,,32 features,"Cross-Validation with data of 2129 kidney recipients from three centres in Europe and 1428 from three centres in North America, recruited between 2002 and 2014. Additional validation in three randomised controlled trials.",size: 4000 (+ 3557 cross validation),,,,,,,Nil
+Conventional Decision Tree,"A Machine Learning Approach Using Survival Statistics to Predict Graft Survival in Kidney Transplant Recipients: A Multicenter Cohort Study: 
+https://www.ncbi.nlm.nih.gov/pubmed/28827646; 
+2017; 
+Kyung Don Yoo, Junhyug Noh, Hajeong Lee, Dong Ki Kim, Chun Soo Lim, Young Hoon Kim, Jung Pyo Lee, Gunhee Kim, Yon Su Kim",Long term graft survival,,,,,size: 3117,,,,,,,Nil
+"Decision Tree, Random Forest","Decision tree and random forest models for outcome prediction in antibody incompatible kidney transplantation:
+https://doi.org/10.1016/j.bspc.2017.01.012;
+2017;
+Torgyn Shaikhinaa, Dave Lowe, Sunil Daga, David Briggs, Robert Higgins, Natasha Khovanova","1. Acute anti body mediated rejection 30 days post kidney transplant to make certain that the donor kidney is safely accepted.
+2. key risk factors associated with acute antibody mediated rejection (ABMR) within 30 days post transplantation
+3. and to find base-line levels of DSAs for safe transplantation",Not mentioned,"- DT based on the standardCART algorithm
+- split optimisation criterion used in this DT model is the Gini’s Diversity Index (GDI), which is a measure of node impurity
+- minimum 10 observations for the node tobecome a branch node and at least 1 observation per a leaf node
+- The experiment with DT was repeated 600 times
+- Use of pruning to reduce the size of the DT
+- RF was comprised of 600 fully grown trees","14 features
+7 continuos, 4 cateorical, 3 binary",,80 patients: 49 female and 31 male patients with average age 41.8 ± 11.6 years (range = 18–68 years) at time of transplantation.,"Decision Tree
+Sn: 81.8
+Sp: 88.9
+PPV: 90
+NPV: 80
+AUC: 0.854
+
+Random Forest
+Sn: 92.3
+Sp: 71.4
+PPV: 85.7
+NPV: 83.3
+AUC: 0.819
+",well balanced (46 ABMR + ve and 34 ABMR-ve samples),,30 days post transplantation,,,Nil
+"logistic regression (LR),
+linear discriminant analysis (LDA), 
+quadratic discriminant analysis (QDA), 
+support vector machines (SVMs; using linear, radial basis function and polynomial kernels), 
+decision tree (DT), 
+random forest (RF), 
+and stochastic gradient boosting (SGB)","Prediction of delayed graft function after kidney transplantation: comparison between logistic regression and machine learning methods:
+https://doi.org/10.1186/s12911-015-0206-y;
+2015;
+Decruyenaere, A., Decruyenaere, P., Peeters, P. et al.","Evaluation of multiple ML models in the prediction of Delayed Graft Function (DFG).
+(DGF is defined as the need for dialysis within the first week after transplantation)","1. A recursive feature elimination procedure is used based on 10-fold stratified cross-validation
+2. The relative importance of the features is ranked using an external model, i.e., the coefficients of a logistic regression model. 
+3. The full feature set is then iteratively pruned by removing the feature with the lowest importance until the 10-fold stratified cross-validation score
+decreases significantly","The relative importance of the features is ranked using an external model, i.e., the coefficients of a logistic regression model. The full feature set is then iteratively pruned by removing the feature with the lowest importance until the 10-fold stratified cross-validation score decreases significantly","20 features out of 55 retrospectively collected
+parameters",,497 kidney transplants,Look at the end of this row,,,7 days post transplantation,,,Nil
+"ANN: Multilayer feed forward perceptron,
+Logistic regression","Prediction of delayed renal allograft function using an artificial neural network:
+https://doi.org/10.1093/ndt/gfg439;
+2003;
+Michael E. Brier, Prasun C. Ray, Jon B. Klein",Use of an artificial neural network to predict the occurrence of DGF and compared with traditional logistical regression models for prediction of DGF,,Cutoff point of 0.5 in logistic regression and 0 in ANN ,10 features,,304 cadaveric renal transplants,"Logistic regression:
+Ac: 64%
+Auc: 0.636 ± 0.054
+Sn: 36.5%
+Sp:  90.7%
+
+NN:
+Ac: 63%
+Auc: 0.668 ± 0.053
+Sn: 63.5%
+Sp: 64.8%
+",,,8 days post transplantation,,,Nil
+"Auto encoders
+Decision tree
+SVM
+Random forest
+Logistic regression","Mapping Patient Trajectories using Longitudinal Extraction and Deep Learning in the MIMIC-III Critical Care Database:
+https://psb.stanford.edu/psb-online/proceedings/psb18/beaulieu-jones.pdf;
+2018;
+Brett K. Beaulieu-Jones, Patryk Orzechowski and Jason H. Moore",Patient survival upto 1 year from the day of admission,Yes (using ReliefF to measure top 100 features),,,Mimic-III,46751,,,,1 year post hospitalization,,,Nil
+Cox regression,"A Multidimensional Prognostic Score and Nomogram to Predict Kidney Transplant Survival: The Integrative Box (iBox) System:
+https://atcmeetingabstracts.com/abstract/a-multidimensional-prognostic-score-and-nomogram-to-predict-kidney-transplant-survival-the-integrative-box-ibox-system/;
+2017;
+Loupy A, Aubert O, Orandi B, Jackson A, Naesens M, Kamar N, Thaunat O, Morelon E, Delahousse M, Viglietti D, Glotz D, Legendre C, Jouven X, Montgomery R, Stegall M, Segev D, Lefaucheur C.",Scoring system that predicts kidney allograph loss,,,80 features,,4344 kidney transplant receipients (2002 - 2014),,,,,,,Nil
+"Baseline model: Gradient boosted tress
+Final model: Recurrent neural network","A clinically applicable approach to continuous prediction of future acute kidney injury:
+https://doi.org/10.1038/s41586-019-1390-1;
+2019;
+Nenad Tomasev, Xavier Glorot, et. al.","- A model that predicts all acute kidney injuries that required subsequent administration of dialysis, with a lead time of up to 48 h and a ratio of 2 false alerts for every true alert
+- Dialysis requirement prediction within 30 days and 90 days of the onset of AKI of any stage","- Sequential events are grouped together based on 6 hours time period
+- all features are normalized
+- historical aggregation for discrete features by including whether these features were observed in the historical interval or not
+- For numerical features, we included the count, mean, median, standard deviation, minimum and maximum value observed in the interval, as well as simple trend features such as the difference between the last observed value and the minimum or maximum and the average difference between subsequent steps (which measures the temporal short-term variability of the measurement)
+","- The best-performing RNN architecture used a cell size of 200 units per layer and 3 layers
+- The best validation results were achieved using an initial learning rate of 0.001 decayed every 12,000 training steps by a factor of 0.85, with a batch size of 128 and a back-propagation through time window of 128. ",Multiple features were assigned t0 29 high level categories,,703782 patients between age 18-90 years,,"- performed an ablation analysis of the design choices 
+-  All variables are initialized via  ormalized (Xavier) initialization and trained using the Adam optimization scheme.
+- ",,48 hours post transplantation,,"- Instead of imputation, a new feature 'presence' is added to correspond whether it is an actual missing value or zero - presence features encoded whether a particular numerical value is considered to be normal, low, high, very low or very high (so when a feature was not recorded because it is normal, this will count as normal)",Nil
+"Kaplan-Meier method
+Cox Proportional Hazard ","Recent Trends in Computational Prediction of Renal Transplantation Outcomes:
+DOI: 10.5120/10521-5501;
+2013;
+Aswathy Ravikumar, Saritha R, Vinod Chandra S S ",Transplant outcome prediction,"HLA matching
+cold ischemia time (CIT)",,14 features,,,,,,,,,Nil
+"Aritificial Neural Network
+Cox regression-based nomogram","Prediction of Graft Survival of Living-Donor Kidney Transplantation: Nomograms or Artificial Neural Networks?:
+doi: 10.1097/TP.0b013e31818b221f;
+2008;
+Ahmed Akl, Amani M. Ismail, and Mohamed Ghoneim",predict 5-year graft survival of livingdonor kidney transplants,,"- feed-forward back-propagation topology NN
+- Training was carried out by a conjugate gradient descent optimization algorithm. 
+- The target was to achieve a sum of squared error of 0.01
+- 1000 training cycles 
+- Nine neurons in the hidden layer and 200 epochs (training cycles) were necessary
+to achieve this goal.",40 input layers,,1900 patients with living-donor kidney transplant;,"ANN
+Sn:  88.43%
+Sp: 73.26%
+Ac:  88%
+Ppv: 82.1%
+Npv: 82%
+
+Nomogram
+Sn:  61.84%
+Sp: 74.9%
+Ac:  72%
+Ppv: 43.5%
+Npv: 86.3%","Exclusion criteria: sensitization with a positive lymphocytotoxic crossmatch,recent malignancy, addiction, psychiatric disorders, type I diabetes mellitus, and significant extrarenal organ failure (pulmonary, hepatic, and cardiac)",,5 years after transplantation,,,Nil
+Bayesian Belief Network (BBN),"Bayesian Modeling of Pretransplant Variables Accurately Predicts Kidney Graft Survival:
+https://doi.org/10.1159/000345552; 
+2012;
+Brown T.S., Elster E.A, Stevens K, Graybill J.C, Gillern S, Phinney S, Salifu M.O, Jindal R.M",predict graft failure within the first year or within 3 years,"- Continuous variables were divided into two bins based on equal areas under the distribution curves
+- binning continuous variables, has the benefit of reducing ‘noise’ in the data, but also loses information
+- 10-fold internal cross-validation",bayesian information criterion that trades off goodness of fit for model complexity) of 0.5,48 clinical variables (pre transplant variable),,5144 patients,"Prediction at 1 year : 
+AUC - 0.63; 
+Sn - 39.9%;
+Sp - 79.9%
+
+Prediction at 3 years : 
+AUC - 0.63; 
+Sn -3 9.8%; 
+Sp - 80.2%",,,,United States Renal Data System database (USRDS database),,Nil
+Decision Trees,"Decisional Trees in Renal Transplant Follow-up:
+https://doi.org/10.1016/j.transproceed.2010.03.061;
+2010;
+R.Grecoa, T.Papalia, D.Lofaro, S.Maestripieri, D.Mancuso, R.Bonofiglio",Graft failure at 5 years post KT,,,"9
+parameters: age, sex, time on dialysis, donor type, donor age, HLA mismatches, delayed graft function (DGF), acute rejection episode (ARE), and chronic allograft nephropathy (CAN)",,194 KT patients (both living and deceased donor),"Sn - 88.2%; 
+Sp - 73.8%",,,,,,Nil
+SVM with Gaussian support vector machine with recursive feature elimination on the more inclusive dataset,"Predicting the outcome of renal transplantation:
+https://doi.org/10.1136/amiajnl-2010-000004; 
+2012;
+Julia Lasserre, Steffen Arnold, Martin Vingron, Petra Reinke, Carl Hinrichs",Predict the estimated glomerular filtration rate (eGFR) of the recipient 1 year after transplantation,"- 10-fold cross-validation
+- To preselect features automatically, principal-component analysis (PCA) and regressional Relief-F were run",,6,,707 KT patients (deceased),Pearson correlation coefficient 0.48,,,,"Donor: Eurotransplant's database
+Recipient: Charité Campus Virchow-Klinikum's database","Two separate datasets were created, taking features with <10% missing values for one and <50% missing values for the other. Four established regressors were run on both datasets, with and without feature selection",Nil
+Bayesian belief network classifier,"Bayes Net Classifiers for Prediction of Renal Graft Status and Survival Period:
+http://www.eng.utoledo.edu/~gserpen/Publications/IJMMS%202010%20Article.pdf;
+2010;
+Jiakai Li, Gursel Serpen, Steven Selman, Matt Franchetti, Mike Riesen and Cynthia Schneider ",prediction of graft status and survival period in renal transplantation using the patient profile information prior to the transplantation.,Principal Component Analysis (PCA),,22,,1228 patient records,Ac – 71.7%,,,,University of Toledo Medical Center Hospital patients as reported to the United Network Organ Sharing (UNOS dataset),,Nil
+"Artificial neural network (ANN) 
+Logistic Regression","Prediction of Kidney Graft Rejection Using Artificial Neural Network:
+https://doi.org/10.4258/hir.2017.23.4.277; 
+2017;
+Leili Tapak, Omid Hamidi, Payam Amini, Jalal Poorolajal",identify potential important risk factors for chronic nonreversible graft rejection,,,19,,378 patients,"ANN:
+Ac: 0.75
+Roc: 0.88
+
+LR:
+Ac: 0.55
+Roc: 0.75",,,,,,Nil
+"Feedforward Neural Network
+Recurrent Neural Networks
+(RNNs)
+Logistic Regression","Predicting Clinical Events by Combining Static and Dynamic Information using Recurrent Neural Networks:
+DOI: 10.1109/ICHI.2016.16;
+2016;
+Cristobal Esteban, Oliver Staeck, Stephan Baier, Yinchong Yang, Volker Tresp","Prediction of occurence of the following events in 6-12 months post transplantation:
+1. rejection of the kidney, 
+2. loss of the kidney and 
+3. death of the patient",,,,,,,,,6-12 months post tranplantation,database collected in the Charite Hospital in Berlin,,Nil
