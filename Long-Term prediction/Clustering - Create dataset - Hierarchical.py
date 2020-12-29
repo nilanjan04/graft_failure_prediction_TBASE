@@ -109,7 +109,13 @@ dendrogram = sch.dendrogram(sch.linkage(features, method='ward'))
 
 model = AgglomerativeClustering(n_clusters=3, affinity='euclidean', linkage='ward')
 model.fit(features)
+
+
+# Check Silhouette Coefficient
+from sklearn import metrics
 labels = model.labels_
+metrics.silhouette_score(features, labels, metric='euclidean')
+
 
 clusters = pd.DataFrame(labels,columns=['cluster'])
 
