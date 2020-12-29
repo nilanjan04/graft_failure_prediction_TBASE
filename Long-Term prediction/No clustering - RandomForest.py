@@ -207,7 +207,7 @@ print(train_labels.shape)
 # =============================================================================
 from sklearn.ensemble import RandomForestClassifier
 #rf = RandomForestClassifier(n_estimators = 400, random_state = 42, min_samples_split=2, min_samples_leaf=1, max_features='sqrt', max_depth=None, bootstrap=False)
-rf = RandomForestClassifier(n_estimators = 10000, random_state = 42)
+rf = RandomForestClassifier(oob_score=True, n_estimators = 10000, random_state = 42)
 rf.fit(train_features, train_labels);
 
 predictions = rf.predict(test_features)
@@ -298,6 +298,17 @@ importances = pd.DataFrame.from_dict(feats, orient='index').rename(columns={0: '
 import csv
 importances.sort_values(by='Gini-importance').to_csv(r'T:\tbase\feature_importances.csv', quoting=csv.QUOTE_NONNUMERIC)
 
+# =============================================================================
+#oob scores
+# =============================================================================
+
+feats = {} # a dict to hold feature_name: feature_importance
+for feature, oob in zip(feature_list, rf.oob_decision_function_):
+    feats[feature] = oob #add the name/value pair 
+
+oob_scores = pd.DataFrame.from_dict(feats, orient='index').rename(columns={0: 'oob_score'})
+import csv
+oob_scores.to_csv(r'T:\tbase\feature_oob.csv', quoting=csv.QUOTE_NONNUMERIC)
 
 #Results
 # =============================================================================
