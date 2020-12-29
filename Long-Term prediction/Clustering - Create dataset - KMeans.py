@@ -133,6 +133,11 @@ clustering = KMeans(n_clusters=4,random_state=5)
 clustering.fit(features)
 clusters = pd.DataFrame(clustering.predict(features),columns=['cluster'])
 
+# Check Silhouette Coefficient
+from sklearn import metrics
+labels = clustering.labels_
+metrics.silhouette_score(features, labels, metric='euclidean')
+
 features = features_imp.join(clusters)
 
 features.to_csv(r'T:\\tbase\\tbase_data_kmeans_4_clusters_diag.csv')
